@@ -65,6 +65,7 @@ public class Pizza {
             }
             c5="Total Price: "+this.price;
             bill=c1+c2+c3+c4+c5;
+            isBill=true;
         }
         return this.bill;
     }
