@@ -25,7 +25,6 @@ public class Pizza {
     public void addExtraCheese(){
         // your code goes here
         if(!this.extraCheese) {
-            this.price += 80;
             this.extraCheese = true;
         }
     }
@@ -33,8 +32,6 @@ public class Pizza {
     public void addExtraToppings(){
         // your code goes here
         if(!this.extraToppings){
-            if(isVeg) this.price+=70;
-            else this.price+=120;
             this.extraToppings = true;
         }
     }
@@ -42,7 +39,6 @@ public class Pizza {
     public void addTakeaway(){
         // your code goes here
         if(!this.takeAway){
-            this.price+=20;
             this.takeAway=true;
         }
     }
@@ -53,17 +49,17 @@ public class Pizza {
             String c1,c2="",c3="",c4="",c5;
             if(isVeg) {
                 c1="Base Price Of The Pizza: 300\n";
-                if(this.extraCheese)c2="Extra Cheese Added: 80\n";
-                if(this.extraToppings) c3="Extra Toppings Added: 70\n";
-                if(this.takeAway) c4="Paperbag Added: 20\n";
+                if(this.extraCheese){this.price+=80; c2="Extra Cheese Added: 80\n";}
+                if(this.extraToppings){ this.price+=70; c3="Extra Toppings Added: 70\n";}
+                if(this.takeAway){this.price+=20; c4="Paperbag Added: 20\n";}
             }
             else{
                 c1="Base Price Of The Pizza: 400\n";
-                if(this.extraCheese)c2="Extra Cheese Added: 80\n";
-                if(this.extraToppings) c3="Extra Toppings Added: 120\n";
-                if(this.takeAway) c4="Paperbag Added: 20\n";
+                if(this.extraCheese){this.price+=80;c2="Extra Cheese Added: 80\n";}
+                if(this.extraToppings){this.price+=120; c3="Extra Toppings Added: 120\n";}
+                if(this.takeAway){this.price+=20; c4="Paperbag Added: 20\n";}
             }
-            c5="Total Price: "+this.price;
+            c5="Total Price: "+this.price+"\n";
             bill=c1+c2+c3+c4+c5;
             isBill=true;
         }
