@@ -50,17 +50,19 @@ public class Pizza {
     public String getBill(){
         // your code goes here
         if(!isBill){
-            String c1,c2,c3="",c4="",c5;
+            String c1,c2="",c3="",c4="",c5;
             if(isVeg) {
                 c1="Base Price Of The Pizza: 300\n";
+                if(this.extraCheese)c2="Extra Cheese Added: 80\n";
                 if(this.extraToppings) c3="Extra Toppings Added: 70\n";
+                if(this.takeAway) c4="Paperbag Added: 20\n";
             }
             else{
                 c1="Base Price Of The Pizza: 400\n";
+                if(this.extraCheese)c2="Extra Cheese Added: 80\n";
                 if(this.extraToppings) c3="Extra Toppings Added: 120\n";
+                if(this.takeAway) c4="Paperbag Added: 20\n";
             }
-            c2="Extra Cheese Added: 80\n";
-            if(this.takeAway) c4="Paperbag Added: 20\n";
             c5="Total Price: "+this.price;
             bill=c1+c2+c3+c4+c5;
         }
